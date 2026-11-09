@@ -4,365 +4,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POTRET AIR | Magetan</title>
-
+<title>POTRET AIR | Atlas Digital Magetan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #103c50;
-  --blue: #167d9b;
-  --green: #39866c;
-  --light: #edf6f3;
-  --white: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f3f8f6;
-  color: var(--navy);
-  line-height: 1.6;
-}
-
-header {
-  padding: 22px 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-}
-
-.brand {
-  font-size: 23px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--navy);
-}
-
-.brand span {
-  color: var(--green);
-}
-
-.nav-label {
-  font-size: 13px;
-  color: #607b83;
-  letter-spacing: 1px;
-}
-
-.hero {
-  padding: 85px 8% 95px;
-  color: white;
-  background:
-    radial-gradient(circle at 85% 25%, rgba(123,211,174,.35), transparent 25%),
-    linear-gradient(125deg, #103c50 0%, #167d9b 55%, #39866c 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 50%;
-  right: -120px;
-  bottom: -280px;
-  box-shadow: 0 0 0 35px rgba(255,255,255,.04),
-              0 0 0 75px rgba(255,255,255,.03);
-}
-
-.hero-content {
-  max-width: 760px;
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border: 1px solid rgba(255,255,255,.4);
-  border-radius: 30px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 22px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.05;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-
-.hero h1 span {
-  color: #a8e5c5;
-}
-
-.hero p {
-  max-width: 650px;
-  font-size: 17px;
-  color: #e2f2ef;
-  margin-bottom: 30px;
-}
-
-.hero-button {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--navy);
-  background: white;
-  padding: 13px 25px;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: .2s;
-}
-
-.hero-button:hover {
-  background: #d9f3e6;
-  transform: translateY(-2px);
-}
-
-.section {
-  padding: 70px 8%;
-}
-
-.section-heading {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 40px;
-}
-
-.section-heading .small-title {
-  color: var(--green);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.section-heading h2 {
-  font-size: 32px;
-  margin: 8px 0 12px;
-}
-
-.section-heading p {
-  color: #647c80;
-}
-
-.maps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.map-card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 28px rgba(20,65,70,.08);
-  transition: .25s;
-  display: flex;
-  flex-direction: column;
-}
-
-.map-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 14px 35px rgba(20,65,70,.14);
-}
-
-.card-art {
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 58px;
-  background: linear-gradient(135deg, #d9eee8, #b9dce4);
-}
-
-.card-art.industry {
-  background: linear-gradient(135deg, #e1eee5, #c1d8cb);
-}
-
-.card-art.lake {
-  background: linear-gradient(135deg, #d8edf1, #b6dce4);
-}
-
-.card-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.card-content .number {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.card-content h3 {
-  font-size: 21px;
-  margin: 8px 0;
-}
-
-.card-content p {
-  color: #6c8184;
-  font-size: 14px;
-  margin-bottom: 22px;
-  flex: 1;
-}
-
-.card-link {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  background: var(--navy);
-  color: white;
-  padding: 11px 16px;
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 700;
-  transition: .2s;
-}
-
-.card-link:hover {
-  background: var(--green);
-}
-
-.info {
-  padding: 45px 8%;
-  background: #e5f1ed;
-  text-align: center;
-}
-
-.info h2 {
-  margin-bottom: 10px;
-}
-
-.info p {
-  max-width: 720px;
-  margin: auto;
-  color: #607a7d;
-}
-
-footer {
-  background: #103c50;
-  color: #d7e8e5;
-  text-align: center;
-  padding: 25px 8%;
-  font-size: 13px;
-}
-
-@media (max-width: 850px) {
-  .maps {
-    grid-template-columns: 1fr;
-  }
-  .hero {
-    padding-top: 65px;
-  }
-  header {
-    padding: 18px 6%;
-  }
-  .section {
-    padding: 55px 6%;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#173f36;--lime:#c8e3a2;--ink:#19332d;--muted:#71817a;--cream:#f6f7f1}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
+a{text-decoration:none;color:inherit}
+header{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fff}
+.logo{font-size:23px;font-weight:800;letter-spacing:2px;color:var(--green)}
+.logo span{color:#7aab62}
+nav{display:flex;gap:30px;font-size:13px;font-weight:600;color:#52645d}
+nav a:hover{color:#75a35e}
+.nav-btn{background:var(--green);color:white;padding:12px 20px;border-radius:30px}
+.hero{min-height:590px;position:relative;display:flex;align-items:center;padding:80px 9%;color:white;background:linear-gradient(90deg,rgba(8,37,32,.88),rgba(8,37,32,.45) 60%,rgba(8,37,32,.12)),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{max-width:720px}
+.eyebrow{font-size:12px;letter-spacing:3px;font-weight:700;color:var(--lime);margin-bottom:25px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,84px);line-height:1.08;margin-bottom:24px}
+.hero h1 span{color:var(--lime);font-style:italic}
+.hero p{font-size:17px;line-height:1.8;color:#e0e9e3;max-width:590px;margin-bottom:34px}
+.btn{display:inline-block;background:var(--lime);color:var(--green);padding:15px 25px;border-radius:5px;font-size:14px;font-weight:800}
+.btn:hover{background:white}
+.hero-note{position:absolute;right:8%;bottom:38px;font-size:11px;letter-spacing:2px;color:#e1e9e4}
+.intro{padding:90px 9%;display:grid;grid-template-columns:1fr 1.2fr;gap:70px;align-items:center;background:white}
+.kicker{color:#73985d;font-size:11px;letter-spacing:3px;font-weight:800;margin-bottom:15px}
+.intro h2,.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,47px);line-height:1.2;color:var(--green)}
+.intro p{font-size:15px;line-height:1.9;color:var(--muted);margin-top:18px}
+.intro-visual{height:330px;border-radius:5px;overflow:hidden;position:relative}
+.intro-visual img{width:100%;height:100%;object-fit:cover}
+.visual-label{position:absolute;bottom:20px;left:20px;background:white;padding:13px 18px;font-size:12px;font-weight:700;color:var(--green)}
+.maps{padding:90px 8%;background:var(--cream)}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:40px}
+.section-top p{max-width:370px;color:var(--muted);font-size:14px;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:white;border-radius:7px;overflow:hidden;box-shadow:0 8px 30px #173f3610;transition:.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 35px #173f3620}
+.card-image{height:235px;position:relative;overflow:hidden}
+.card-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover img{transform:scale(1.06)}
+.card-no{position:absolute;top:17px;left:17px;background:#fff;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+.card-body{padding:25px}
+.card-body small{color:#7c9c68;font-size:10px;font-weight:800;letter-spacing:2px}
+.card-body h3{font-family:'Playfair Display',serif;font-size:25px;margin:9px 0;color:var(--green)}
+.card-body p{font-size:13px;line-height:1.8;color:var(--muted);min-height:70px}
+.card-link{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid #e8eee8;font-size:13px;font-weight:800;color:var(--green)}
+.card-link span{font-size:20px}
+.quote{padding:85px 10%;background:var(--green);color:white;text-align:center}
+.quote .kicker{color:var(--lime)}
+.quote h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);max-width:850px;margin:0 auto 20px}
+.quote p{color:#d2e0d7;font-size:14px;line-height:1.8;max-width:680px;margin:auto}
+.footer{padding:35px 8%;background:#102e28;color:#dce8df;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px}
+.footer strong{font-size:17px;letter-spacing:2px}
+@media(max-width:800px){
+ header{padding:0 5%;height:70px}
+ nav{gap:12px;font-size:11px}
+ .nav-btn{display:none}
+ .hero{min-height:570px;padding:65px 7%}
+ .hero-note{display:none}
+ .intro{grid-template-columns:1fr;padding:65px 7%;gap:30px}
+ .intro-visual{height:250px}
+ .maps{padding:65px 6%}
+ .section-top{display:block}
+ .section-top p{margin-top:15px}
+ .cards{grid-template-columns:1fr}
+ .card-image{height:240px}
+ .footer{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="brand">POTRET <span>AIR</span></div>
-  <div class="nav-label">ATLAS DIGITAL KUALITAS AIR</div>
+ <a class="logo" href="#">POTRET<span>AIR</span></a>
+ <nav>
+  <a href="#">Beranda</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#peta">Jelajahi Peta</a>
+ </nav>
+ <a class="nav-btn" href="#peta">Mulai Eksplorasi ↗</a>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">KABUPATEN MAGETAN</div>
-    <h1>Menjaga Air,<br><span>Merawat Masa Depan.</span></h1>
-    <p>
-      POTRET AIR merupakan atlas digital pemantauan kualitas air
-      Kabupaten Magetan yang menyajikan informasi spasial dan data
-      lingkungan secara interaktif dalam satu platform.
-    </p>
-    <a href="#peta" class="hero-button">Jelajahi Peta &nbsp; →</a>
-  </div>
+ <div class="hero-content">
+  <div class="eyebrow">ATLAS DIGITAL · KABUPATEN MAGETAN</div>
+  <h1>Mengenal Air,<br><span>Menjaga Kehidupan.</span></h1>
+  <p>Jelajahi potret kualitas air Kabupaten Magetan melalui atlas digital interaktif. Menghubungkan data, lokasi, dan informasi lingkungan dalam satu ruang eksplorasi.</p>
+  <a class="btn" href="#peta">JELAJAHI PETA &nbsp; ↗</a>
+ </div>
+ <div class="hero-note">WATER · NATURE · INFORMATION</div>
 </section>
 
-<section class="section" id="peta">
-  <div class="section-heading">
-    <div class="small-title">Eksplorasi Data</div>
-    <h2>Peta Pemantauan Kualitas Air</h2>
-    <p>
-      Pilih kategori peta untuk melihat sebaran lokasi pemantauan
-      dan informasi kualitas air di Kabupaten Magetan.
-    </p>
-  </div>
-
-  <div class="maps">
-
-    <div class="map-card">
-      <div class="card-art">💧</div>
-      <div class="card-content">
-        <div class="number">01 / AIR PERMUKAAN</div>
-        <h3>Air Sumber</h3>
-        <p>
-          Informasi titik pemantauan dan hasil pengujian
-          kualitas air sumber di Kabupaten Magetan.
-        </p>
-        <a class="card-link" href="air-sumber/">Buka Peta →</a>
-      </div>
-    </div>
-
-    <div class="map-card">
-      <div class="card-art industry">🏭</div>
-      <div class="card-content">
-        <div class="number">02 / AIR LIMBAH</div>
-        <h3>Air Limbah Industri</h3>
-        <p>
-          Peta lokasi pemantauan air limbah industri
-          beserta informasi hasil pengujiannya.
-        </p>
-        <a class="card-link" href="air-limbah-industri/">Buka Peta →</a>
-      </div>
-    </div>
-
-    <div class="map-card">
-      <div class="card-art lake">🌊</div>
-      <div class="card-content">
-        <div class="number">03 / AIR DANAU</div>
-        <h3>Danau dan Telaga</h3>
-        <p>
-          Informasi lokasi dan pemantauan kualitas air
-          danau serta telaga di Kabupaten Magetan.
-        </p>
-        <a class="card-link" href="danau-telaga/">Buka Peta →</a>
-      </div>
-    </div>
-
-  </div>
+<section class="intro" id="tentang">
+ <div>
+  <div class="kicker">TENTANG POTRET AIR</div>
+  <h2>Melihat kondisi air melalui perspektif yang lebih luas.</h2>
+  <p>POTRET AIR hadir sebagai media informasi spasial pemantauan kualitas air di Kabupaten Magetan. Sajian peta interaktif membantu pengguna mengenali lokasi pemantauan dan menelusuri informasi hasil pengujian secara lebih mudah.</p>
+ </div>
+ <div class="intro-visual">
+  <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&q=85" alt="Aliran air di alam">
+  <div class="visual-label">Air adalah bagian dari kehidupan.</div>
+ </div>
 </section>
 
-<section class="info">
-  <h2>Satu Wilayah, Satu Informasi Terpadu</h2>
-  <p>
-    Melalui POTRET AIR, informasi pemantauan kualitas air
-    disajikan secara visual dan interaktif untuk mendukung
-    pengelolaan sumber daya air dan pengambilan keputusan
-    berbasis data di Kabupaten Magetan.
-  </p>
+<section class="maps" id="peta">
+ <div class="section-top">
+  <div>
+   <div class="kicker">RUANG EKSPLORASI</div>
+   <h2 class="section-title">Jelajahi Peta Air</h2>
+  </div>
+  <p>Pilih kategori pemantauan untuk membuka peta dan melihat informasi lokasi beserta data kualitas air.</p>
+ </div>
+
+ <div class="cards">
+  <article class="card">
+   <div class="card-image">
+    <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=85" alt="Aliran air sumber">
+    <div class="card-no">01 / AIR SUMBER</div>
+   </div>
+   <div class="card-body">
+    <small>PEMANTAUAN AIR SUMBER</small>
+    <h3>Air Sumber</h3>
+    <p>Telusuri lokasi titik pemantauan dan informasi hasil pengujian kualitas air sumber.</p>
+    <a class="card-link" href="air-sumber/">Buka peta interaktif <span>↗</span></a>
+   </div>
+  </article>
+
+  <article class="card">
+   <div class="card-image">
+    <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=85" alt="Kawasan industri">
+    <div class="card-no">02 / AIR LIMBAH</div>
+   </div>
+   <div class="card-body">
+    <small>PEMANTAUAN AIR LIMBAH</small>
+    <h3>Air Limbah Industri</h3>
+    <p>Jelajahi informasi lokasi pemantauan air limbah industri dan data pengujiannya.</p>
+    <a class="card-link" href="air-limbah-industri/">Buka peta interaktif <span>↗</span></a>
+   </div>
+  </article>
+
+  <article class="card">
+   <div class="card-image">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Pemandangan danau">
+    <div class="card-no">03 / DANAU & TELAGA</div>
+   </div>
+   <div class="card-body">
+    <small>PEMANTAUAN DANAU</small>
+    <h3>Danau dan Telaga</h3>
+    <p>Kenali lokasi dan informasi pemantauan kualitas air danau serta telaga.</p>
+    <a class="card-link" href="danau-telaga/">Buka peta interaktif <span>↗</span></a>
+   </div>
+  </article>
+ </div>
 </section>
 
-<footer>
-  <strong>POTRET AIR — Kabupaten Magetan</strong>
-  <br>
-  Atlas Digital Pemantauan Kualitas Air
+<section class="quote">
+ <div class="kicker">POTRET AIR · MAGETAN</div>
+ <h2>Informasi yang lebih terbuka. Pemahaman lingkungan yang lebih baik.</h2>
+ <p>Data dan informasi pemantauan kualitas air menjadi salah satu pijakan dalam mendukung pengelolaan lingkungan yang berkelanjutan.</p>
+</section>
+
+<footer class="footer">
+ <strong>POTRET AIR</strong>
+ <span>Atlas Digital Pemantauan Kualitas Air · Kabupaten Magetan</span>
+ <span>© 2026</span>
 </footer>
 
 </body>
